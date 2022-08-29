@@ -56,7 +56,7 @@ sum_model = tf.keras.Sequential([
     layers.Dense(units=3),
 layers.Dense(units=32,activation="sigmoid"),
 layers.Dense(units=128, activation="sigmoid"),
-layers.Dense(units=16),
+layers.Dense(units=32),
 layers.Dense(units=8),
    layers.Dense(units=1)
 ])
@@ -66,21 +66,28 @@ sleep(3)
 print(sum_model.predict(train_features[:10]))
 
 sum_model.compile(
-   optimizer=tf.optimizers.Adam(),
+   optimizer=tf.optimizers.Adamax(learning_rate=0.001),
    loss="mean_absolute_error")
 
-sum_model.fit(train_features,train_labels,epochs=80,validation_split = 0.2, batch_size= 3)
+sum_model.fit(train_features,train_labels,epochs=80,validation_split = 0.2, batch_size= 1)
 print("2-7")
+print(2-7)
 print(sum_model.predict([[2,0,7]])[0])
 print("76+7")
+print(76+7)
 print(sum_model.predict([[76,1,17]])[0])
 print("213-200")
+print(213-200)
 print(sum_model.predict([[213,0,200]])[0])
 print("49+51")
+print(49+51)
 print(sum_model.predict([[49,1,51]])[0])
 print("1231+3124")
+print(1231+3124)
 print(sum_model.predict([[1231,1,3124]])[0])
 print("1-1111")
+print(1-1111)
 print(sum_model.predict([[1,0,1111]])[0])
 print("12-3")
+print(12-3)
 print(sum_model.predict([[12,0,3]])[0])

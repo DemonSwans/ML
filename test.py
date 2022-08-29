@@ -3,10 +3,10 @@ import random
 
 with open("liczby.txt",'w') as file:
    for _ in range(1000):
-      a = random.randint(0,100)
-      b = random.randint(0,100)
-      c = random.randint(0, 100)
-      d = random.randint(0, 100)
+      a = random.randint(0,400)
+      b = random.randint(0,400)
+      c = random.randint(0,400)
+      d = random.randint(0,400)
       """
       file.write(f'{a} {0} {b} {a - b}\n')
       """
@@ -15,6 +15,9 @@ with open("liczby.txt",'w') as file:
       file.write(f'{a} 0 {b} {a - b}\n')
       file.write(f'{c} 0 {d} {c - d}\n')
       """
+      file.write(f'{b} 0 {a} {b - a}\n')
+      file.write(f'{d} 0 {c} {d - c}\n')
+      
       file.write(f'{a} {0} {c} {a - c}\n')
       file.write(f'{a} {1} {c} {a + c}\n')
       file.write(f'{a} {0} {d} {a - d}\n')
